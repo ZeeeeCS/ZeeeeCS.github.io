@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ahmed Ali | Data Scientist</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --card-bg-color: #ffffff;
+            --header-text-color: #ffffff;
+            --footer-bg-color: #222f3e;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--header-text-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--header-text-color);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 20px;
+        }
+
+        .main-nav a {
+            color: var(--header-text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            height: 3px;
+            width: 25px;
+            background-color: var(--header-text-color);
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--header-text-color);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--header-text-color);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-links a {
+            color: var(--header-text-color);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .hero-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text p {
+             font-size: 1.1rem;
+             margin-bottom: 1rem;
+        }
+        .about-details {
+            list-style: none;
+        }
+        .about-details li {
+            margin-bottom: 0.5rem;
+        }
+        .about-details strong {
+            color: var(--primary-color);
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: var(--card-bg-color);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--background-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .skill-category h3 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .skill-category li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233498db" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
+            padding-left: 25px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            margin-top: 0;
+        }
+        
+        .project-description {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--secondary-color);
+            color: var(--header-text-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+             padding: 1rem 1.5rem;
+             background-color: #f7f7f7;
+             border-top: 1px solid #e0e0e0;
+             text-align: right;
+        }
+        
+        .project-links a {
+             text-decoration: none;
+             color: var(--primary-color);
+             font-weight: bold;
+        }
+        
+        .project-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Experience Section */
+        #experience {
+            background-color: var(--card-bg-color);
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 28px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .timeline-item.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 28px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .timeline-item.right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--background-color);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 { margin-top: 0; }
+        .timeline-content .date {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .timeline-content .company {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--secondary-color);
+            margin-right: 15px;
+        }
+        
+        .contact-info-item a {
+             text-decoration: none;
+             color: var(--text-color);
+             font-size: 1.1rem;
+        }
+
+        .contact-info-item a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+        
+        .btn {
+            background: var(--secondary-color);
+            color: var(--header-text-color);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg-color);
+            color: #bdc3c7;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .main-nav ul li a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid #4a627a;
+            }
+
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+
+            .about-content { flex-direction: column; }
+            .contact-grid { grid-template-columns: 1fr; }
+            
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+            .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
+            .timeline-item.right { left: 0%; }
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Ali Ahmed Ali</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="profile-photo.jpg" alt="Ali Ahmed Ali" class="hero-photo">
+                <h1>Ali Ahmed Ali</h1>
+                <p class="subtitle">Data Scientist & AI Student</p>
+                <div class="hero-links">
+                    <a href="https://www.linkedin.com/in/aliahmed-11m04/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ZeeeeCS" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>A third-year Data Science and AI student at Alexandria University with a strong foundation in programming and a passion for competitive programming and machine learning.</p>
+                        <p>I am passionate about leveraging data to build insightful models and end-to-end applications, as demonstrated through hands-on internship experience and capstone projects involving sales forecasting, job market analysis, and web scraping.</p>
+                    </div>
+                    <div class="about-details">
+                       <ul>
+                           <li><strong>Name:</strong> Ali Ahmed Ali</li>
+                           <li><strong>Location:</strong> Alexandria, Egypt</li>
+                           <li><strong>Email:</strong> aliahmedyossef83@gmail.com</li>
+                           <li><strong>Education:</strong> B.Sc. in Computer & Data Science, Alexandria University (2023-Present)</li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming & Databases</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>ML & Data Science</h3>
+                        <ul>
+                            <li>Predictive Modeling (Regression, Classification)</li>
+                            <li>Streamlit (Web Dashboards)</li>
+                            <li>MLflow (Experiment Tracking)</li>
+                            <li>Model Evaluation (Accuracy, R-Squared, Precision/Recall)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & Core Concepts</h3>
+                         <ul>
+                            <li>AWS (Cloud Infrastructure)</li>
+                            <li>Version Control Systems (Git)</li>
+                            <li>Algorithms & Data Structures</li>
+                            <li>Problem-Solving</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Sales Forecasting for Retail</h3>
+                            <p class="project-description">Led a team of 3 in a capstone project to architect and deploy an end-to-end sales forecasting application. Engineered an interactive web dashboard and integrated MLflow for experiment tracking and reproducibility.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Streamlit</span>
+                                <span class="tech-tag">SARIMA</span>
+                                <span class="tech-tag">Prophet</span>
+                                <span class="tech-tag">LSTM</span>
+                                <span class="tech-tag">MLflow</span>
+                            </div>
+                        </div>
+                         <div class="project-links">
+                            <a href="https://github.com/ZeeeeCS" target="_blank">View on GitHub &rarr;</a>
+                         </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Job Market Insights Analysis</h3>
+                            <p class="project-description">Collaborated in a team to analyze, clean, and compare the job markets in Egypt and Saudi Arabia. I was responsible for extracting real-time data and generating actionable insights for the Saudi market.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Analysis</span>
+                                <span class="tech-tag">Data Cleaning</span>
+                                <span class="tech-tag">Teamwork</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                             <a href="https://github.com/ZeeeeCS" target="_blank">View on GitHub &rarr;</a>
+                         </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Applied Machine Learning Models</h3>
+                            <p class="project-description">Executed complete data science workflows to build and evaluate various predictive models. Implemented Regression, KNN, SVM, and Neural Networks, focusing on hyperparameter tuning and performance assessment using metrics like R-Squared and Precision/Recall.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Regression</span>
+                                <span class="tech-tag">Classification</span>
+                                <span class="tech-tag">KNN</span>
+                                <span class="tech-tag">SVM</span>
+                                <span class="tech-tag">Neural Networks</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                             <a href="https://github.com/ZeeeeCS" target="_blank">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>Data Scientist Intern & Team Leader</h3>
+                            <span class="company">Digital Egypt Pioneers Initiative (DEPI)</span>
+                            <span class="date">October 2024 - June 2025</span>
+                            <p>A hands-on internship focused on web scraping, machine learning, and database management. Responsibilities include extracting data, applying ML models for insights, and managing large datasets efficiently in real-world projects.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>Team Leader and Coordinator</h3>
+                            <span class="company">Eahlashbab and Twaheed & Nour (Volunteer)</span>
+                            <span class="date">April 2023 - May 2023</span>
+                            <p>Led initiatives to distribute food during Ramadan. Managed and guided younger volunteers, coordinating efforts to ensure efficient distribution and smooth operation of the program.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out via email or connect with me on social media.</p>
+                        <div class="contact-info-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,4H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6A2,2,0,0,0,20,4Zm0,4L12,13,4,8V6l8,5,8-5Z"/></svg>
+                             <a href="mailto:aliahmedyossef83@gmail.com">aliahmedyossef83@gmail.com</a>
+                        </div>
+                        <div class="contact-info-item">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4a1,1,0,0,1,1-1H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z"/></svg>
+                           <a href="tel:+201286583679">+20 1286583679</a>
+                        </div>
+                         <div class="contact-info-item">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,1.74,5.55L2,22l4.45-1.74A9.89,9.89,0,0,0,12,22a10,10,0,0,0,0-20Zm5.46,12.22a2,2,0,0,1-1.35.89,4.36,4.36,0,0,1-2.22-.67,8.66,8.66,0,0,1-3.32-3.23,4.64,4.64,0,0,1-.67-2.22,2,2,0,0,1,.89-1.35,1.14,1.14,0,0,1,.8-.26,1,1,0,0,1,.73.35l.47.58a1,1,0,0,1,.1.73,2.67,2.67,0,0,1-.35.64l-.58.74a1,1,0,0,0-.1.73,5.63,5.63,0,0,0,2.22,2.22,1,1,0,0,0,.73-.1l.74-.58a2.67,2.67,0,0,1,.64-.35,1,1,0,0,1,.73.1l.58.47a1,1,0,0,1,.35.73A1.14,1.14,0,0,1,17.46,14.22Z"/></svg>
+                           <a href="https://wa.me/201286583679" target="_blank">WhatsApp</a>
+                        </div>
+                    </div>
+                     <form action="#" class="contact-form">
+                         <h3>Send a Message</h3>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/ZeeeeCS" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aliahmed-11m04/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Ali Ahmed Ali. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Responsive Navigation Menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                 if (mainNav.classList.contains('active')) {
+                     mainNav.classList.remove('active');
+                 }
+            });
+        });
+    </script>
+</body>
+</html>
