@@ -43,10 +43,3 @@ Here are some of the projects I'm proud of.
     * [cite_start]**Technologies:** Scikit-learn, Python, Model Evaluation (Precision/Recall, R-Squared). [cite: 25]
 
 ---
-
-### My GitHub Stats 📊
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ZeeeeCS&show_icons=true&theme=dracula&rank_icon=github" alt="Ali's GitHub Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ZeeeeCS&layout=compact&theme=dracula" alt="Ali's Top Languages"/>
-</p>
