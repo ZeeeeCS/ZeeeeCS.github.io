@@ -400,65 +400,7 @@
             margin-bottom: 0.8rem;
             display: block;
         }
-        /* Add these styles for the new volunteering section */
-            
-            #volunteering {
-                background-color: var(--card-bg-color);
-                padding: 60px 0; /* Ensure consistent section padding */
-            }
-            
-            /* New styles for positioning the volunteer item to the right */
-            .volunteer-item-wrapper { /* Add this new wrapper div to your HTML */
-                max-width: 800px; /* Same max-width as the timeline for alignment */
-                margin: 0 auto; /* Center the wrapper */
-                display: flex; /* Use flexbox to push content to the right */
-                justify-content: flex-end; /* Pushes content to the right */
-                padding-left: 50%; /* Make space on the left for the visual balance */
-            }
-            
-            
-            .volunteer-item {
-                background-color: var(--background-color);
-                padding: 2rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-                flex-basis: 50%; /* Occupy 50% of the wrapper's space */
-                max-width: 400px; /* Optional: cap the individual item's width */
-                border-left: 5px solid var(--secondary-color); /* An accent line */
-                margin-left: 20px; /* Add some space from the center line if needed */
-            }
-            
-            .volunteer-item h3 {
-                margin-top: 0;
-            }
-            
-            .volunteer-item .company {
-                display: block;
-                font-style: italic;
-                margin-bottom: 0.8rem;
-            }
-            
-            .volunteer-item .date {
-                display: block;
-                font-size: 0.9rem;
-                font-weight: bold;
-                color: var(--secondary-color);
-                margin-bottom: 0.5rem;
-            }
-            
-            /* Media query for smaller screens: reset alignment */
-            @media (max-width: 768px) {
-                .volunteer-item-wrapper {
-                    justify-content: flex-start; /* Reset to left for mobile */
-                    padding-left: 0; /* Remove left padding */
-                }
-                .volunteer-item {
-                    flex-basis: 100%; /* Take full width on mobile */
-                    margin-left: 0; /* Remove left margin */
-                    border-left: none; /* Remove border if it looks odd on mobile */
-                    border-bottom: 5px solid var(--secondary-color); /* Add a bottom border instead */
-                }
-            }
+
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -756,17 +698,18 @@
                             <p>A hands-on internship focused on web scraping, machine learning, and database management. Responsibilities include extracting data, applying ML models for insights, and managing large datasets efficiently in real-world projects.</p>
                         </div>
                     </div>
-                     <section id="volunteering">
-                        <div class="container">
-                            <h2>Volunteering</h2>
-                            <div class="volunteer-item-wrapper"> <div class="volunteer-item">
+                    
+                    <div class="timeline-item right">
+                        <div>
+                             <h2>Volunteering</h2>
+                        </div>
+                        <div class="timeline-content">
                                     <h3>Team Leader and Coordinator</h3>
-                                    <span class="company">Eahlashbab and Twaheed & Nour</span>
+                                    <span class="company">Eahlashbab and Twaheed & Nour (Volunteer)</span>
                                     <span class="date">April 2023 - May 2023</span>
                                     <p>Led initiatives to distribute food during Ramadan. Managed and guided younger volunteers, coordinating efforts to ensure efficient distribution and smooth operation of the program.</p>
-                                </div>
-                            </div> </div>
-                    </section>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
