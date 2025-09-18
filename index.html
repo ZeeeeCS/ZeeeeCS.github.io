@@ -400,6 +400,40 @@
             margin-bottom: 0.8rem;
             display: block;
         }
+        /* Add these styles for the new volunteering section */
+
+            #volunteering {
+                background-color: var(--card-bg-color);
+            }
+            
+            .volunteer-item {
+                background-color: var(--background-color);
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+                max-width: 700px; /* Adjust width as needed */
+                margin: 0 auto; /* This centers the block */
+                border-left: 5px solid var(--secondary-color); /* An accent line */
+            }
+            
+            .volunteer-item h3 {
+                margin-top: 0;
+            }
+            
+            .volunteer-item .company {
+                display: block;
+                font-style: italic;
+                margin-bottom: 0.8rem;
+            }
+
+            .volunteer-item .date {
+                display: block;
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: var(--secondary-color);
+                margin-bottom: 0.5rem;
+            }
+                    
 
         /* Contact Section */
         .contact-grid {
@@ -698,16 +732,14 @@
                             <p>A hands-on internship focused on web scraping, machine learning, and database management. Responsibilities include extracting data, applying ML models for insights, and managing large datasets efficiently in real-world projects.</p>
                         </div>
                     </div>
-                    <section id="Voluntering">
+                   <section id="volunteering">
                         <div class="container">
-                            <div class="timeline-item right">
-                                <div class="timeline-content">
-                            
-                                    <h3>Team Leader and Coordinator</h3>
-                                    <span class="company">Eahlashbab and Twaheed & Nour (Volunteer)</span>
-                                    <span class="date">April 2023 - May 2023</span>
-                                    <p>Led initiatives to distribute food during Ramadan. Managed and guided younger volunteers, coordinating efforts to ensure efficient distribution and smooth operation of the program.</p>
-                                </div>
+                            <h2>Volunteering</h2>
+                            <div class="volunteer-item">
+                                <h3>Team Leader and Coordinator</h3>
+                                <span class="company">Eahlashbab and Twaheed & Nour</span>
+                                <span class="date">April 2023 - May 2023</span>
+                                <p>Led initiatives to distribute food during Ramadan. Managed and guided younger volunteers, coordinating efforts to ensure efficient distribution and smooth operation of the program.</p>
                             </div>
                         </div>
                     </section>
